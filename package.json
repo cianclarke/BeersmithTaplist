@@ -1,12 +1,13 @@
 {
   "name": "beersmithtaplist",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "node test/tests.js"
   },
   "dependencies": {
+    "html-entities": "^1.1.1",
     "memory-cache": "0.0.5",
     "request": "^2.51.0",
     "underscore": "^1.7.0",
