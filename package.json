@@ -1,0 +1,17 @@
+{
+  "name": "beersmithtaplist",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/tests.js"
+  },
+  "dependencies": {
+    "memory-cache": "0.0.5",
+    "request": "^2.51.0",
+    "underscore": "^1.7.0",
+    "xml2json": "^0.5.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
