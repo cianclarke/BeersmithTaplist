@@ -17,7 +17,7 @@ bs({
   bs_ondeck : 'ondeck', // String - Optional, the text in bs_field to expect when a beer is on deck
   cacheTimeout : 86400000 // Integer - Optional - only used for recipe file definitions which are loaded over HTTP. default is 1 day
   }, function(err, res){
-    // res is JSON object with properties 'ontap' and 'ondeck'
+    // res is JSON object with properties 'ontap', 'ondeck', along with 'recipes' - the full list of your recipes.
     });
     
     ### Init with Environment Variables

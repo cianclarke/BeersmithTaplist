@@ -8,6 +8,9 @@ bs({
   assert.ok(!err);
   assert.ok(res.ontap);
   assert.ok(res.ondeck);
+  var aRes = res.ontap[0];
+  assert.ok(aRes.name);
+  assert.ok(res.recipes);
 });
 
 bs({}, function(err, res){
