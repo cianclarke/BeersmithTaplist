@@ -9,17 +9,39 @@ You can override the field used if you like, but I find the default "Assistant b
 ## Finding your BeerSmith Recipe definition file
 BeerSmith 2 stores it's recipes in a user specified location. By default this was `~/Documents/Beersmith2`, but I moved it to `~/Dropbox/BeerSmith` using the File -> Change Documents Directory function in BeerSmith. I then copied a public share URL of my file in DropBox. 
 
-## Usage
+## Usage - Easy Mode: Including BeerSmith Taplist on your web site
 
-### As a standlone webserver
+Make sure you've got the public URL of your BeerSmith recipe file (from Dropbox or elsewhere) by following the above step - we'll need it.
+
+### Deploy to Heroku
+You'll need a Heroku account to do this. Click the Deploy button at the top of this repository. Once logged in, Heroku will ask you to fill in a text box in the ENV section. It'll look something like this:  
+![env screen](http://i.imgur.com/E9V9Vjy.png)  
+In this box, fill in the public URL of your recipe file from the above step. 
+The name of your application doesn't matter - now click the Deploy button. This step might take a few minutes.  
+![Done](http://i.imgur.com/Yr7cDjH.png)
+Once completed, click the "View it" link. You should see a page full of funnily formatted text starting with `{` - this is your tap listing formatted as JSON data, and means everything worked OK. Take the URL of this page, and make a note of it. 
+
+### Inlcude this code snippet on your website
+Now, copy and paste the below code snippet into your website where you want the tap listing to appear. Be sure to replace PUT_YOUR_APP_URL_HERE with the URL of your heroku app from the previous "Deploy to Heroku" step. 
+
+    <div id="beersmithtaplist"></div>
+    <script>
+      var beersmith_app_url = "PUT_YOUR_APP_URL_HERE";
+      // Don't edit below here
+      (function(){
+        var bstlscript = document.createElement('script'); bstlscript.type = 'text/javascript'; bstlscript.async = true;
+        bstlscript.src = 'https://cdn.rawgit.com/cianclarke/BeersmithTaplist/master/static/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bstlscript);
+      })()
+    </script>
     
-    export BS_FILE_PATH="path to your recipes.bsmx file"
-    npm start
-    
-Or, use the deploy to heroku button above    
+You can now style the tap listing using CSS to your hearts content!
 
+## Usage - Hard Mode (for Node.js developers)
 
-### Init with an options object
+### As standalone microservice
+
+### Include library with an options object
 
 var bs = require('beersmithtaplist');
 bs({
@@ -30,7 +52,7 @@ bs({
     // res is JSON object with properties as you defined them on the 'BS_FIELD' setting. Also returns 'recipes' - a list of anything with an empty 'BS_FIELD' value.
     });
     
-    ### Init with Environment Variables
+### Init with Environment Variables
     
     # As above, but requires the following environment variables
     export BS_FILE_PATH # required
