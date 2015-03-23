@@ -1,10 +1,11 @@
 {
   "name": "beersmithtaplist",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test/tests.js"
+    "test": "node test/tests.js",
+    "start": "node bin/server.js"
   },
   "dependencies": {
     "html-entities": "^1.1.1",
@@ -13,6 +14,6 @@
     "underscore": "^1.7.0",
     "xml2json": "^0.5.1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "cian@cianclarke.com",
+  "license": "MIT"
 }
