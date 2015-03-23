@@ -11,4 +11,4 @@ http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'application/json'});  
     res.end(JSON.stringify(bsRes));
   });
-}).listen(process.env.PORT | 8000);
+}).listen(process.env.PORT || 8000);
