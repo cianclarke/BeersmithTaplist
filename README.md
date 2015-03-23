@@ -1,3 +1,5 @@
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 #BeerSmith Tap List
 Node.js script to list what's on tap, along with info about that beer, from a specified field entry in the BeerSmith 2 Recipe definition.  
 
@@ -7,6 +9,15 @@ This is a bit of a hack - BeerSmith was never intended to indicate what's on tap
 BeerSmith 2 stores it's recipes in a user specified location. By default this was `~/Documents/Beersmith2`, but I moved it to `~/Dropbox/BeerSmith` using the File -> Change Documents Directory function in BeerSmith. I then copied a public share URL of my file in DropBox. 
 
 ## Usage
+
+### As a standlone webserver
+    
+    export BS_FILE_PATH="path to your recipes.bsmx file"
+    npm start
+    
+Or, use the deploy to heroku button above    
+
+
 ### Init with an options object
 
 var bs = require('beersmithtaplist');

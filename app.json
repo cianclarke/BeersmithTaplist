@@ -1,0 +1,13 @@
+{
+  "name": "BeerSmith tap listing server",
+  "description": "Node.js web server which exposes a BeerSmtih tap listing as an API",
+  "repository": "https://github.com/cianclarke/beersmithtaplist",
+  "logo": "http://d3pddo38v7j30h.cloudfront.net/bs-round64.png",
+  "keywords": ["node", "taplist", "beersmith"],
+  "env": {
+    "BS_FILE_PATH": {
+      "description": "The path of the BeerSmith recipes.bsmx file.",
+      "required": true
+    }
+  }
+}
